@@ -5,9 +5,11 @@ var gameBoard = document.getElementById('game-board');
 
 var flipCard = function() {
   if (this.getAttribute('data-card') === 'queen') {
-    this.setAttribute('style', 'background-image:url(card-queen.gif); background-size: cover; background-repeat: no-repeat;');
+    this.setAttribute('style', 'background-image:url(card-queen.gif);' +
+      'background-size: cover; background-repeat: no-repeat;');
   } else if (this.getAttribute('data-card') === 'king') {
-    this.setAttribute('style', 'background-image:url(card-king.gif); background-size: cover; background-repeat: no-repeat;');
+    this.setAttribute('style', 'background-image:url(card-king.gif); ' +
+      'background-size: cover; background-repeat: no-repeat;');
   }
 };
 
