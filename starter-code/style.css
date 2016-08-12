@@ -75,11 +75,15 @@ footer {
   padding: 20px 10px;
 }
 
-footer section {
-}
-
 footer a {
   color: #fff;
+}
+
+#social_links a {
   display: inline-block;
   margin: 20px;
+}
+
+.fa-circle {
+  color: #b4c3c7;
 }
