@@ -1,4 +1,11 @@
-var cards = ['queen', 'queen', 'king', 'king'];
+var games = [
+  ['queen', 'queen', 'king', 'king'],
+  ['king', 'king', 'queen', 'queen'],
+  ['king', 'queen', 'king', 'queen'],
+  ['queen', 'king', 'queen', 'king'],
+  ['queen', 'king', 'king', 'queen'],
+  ['king', 'queen', 'queen', 'king']
+];
 var cardsInPlay = [];
 
 var gameBoard = document.getElementById('game-board');
@@ -36,8 +43,18 @@ var isMatch = function(cardsInPlay) {
   }
 };
 
+var randomizeCards = function() {
+  var gameNumber = Math.round(Math.random() * 10);
+
+  while (gameNumber > games.length - 1) {
+    gameNumber = Math.round(Math.random() * 10);
+  }
+
+  return games[gameNumber];
+};
 
 var createBoard = function() {
+  var cards = randomizeCards();
   for (i = 0; i < cards.length; i++) {
     var newCard = document.createElement('div');
     newCard.setAttribute('class', 'card');
