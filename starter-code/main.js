@@ -9,6 +9,7 @@ var games = [
 var cardsInPlay = [];
 
 var gameBoard = document.getElementById('game-board');
+var resetButton = document.getElementById('reset');
 
 var flipCard = function() {
   if (this.getAttribute('data-card') === 'queen') {
@@ -32,15 +33,16 @@ var isTwoCards = function() {
 
 var isMatch = function(cardsInPlay) {
   if (cardsInPlay[0] === cardsInPlay[1]) {
+    resetButton.textContent = 'Play again';
     alert('You found a match!');
   } else {
     alert('Sorry, try again.');
+    var allCards = document.querySelectorAll('.card')
+    for (i = 0; i < allCards.length; i++) {
+      allCards[i].removeAttribute('style');
+    }
   }
 
-  var allCards = document.querySelectorAll('.card')
-  for (i = 0; i < allCards.length; i++) {
-    allCards[i].removeAttribute('style');
-  }
 };
 
 var randomizeCards = function() {
@@ -62,7 +64,17 @@ var createBoard = function() {
     newCard.addEventListener('click', flipCard);
     newCard.addEventListener('click', isTwoCards);
     gameBoard.appendChild(newCard);
+
   }
+
+  resetButton.addEventListener('click', resetBoard);
+};
+
+var resetBoard = function() {
+  document.getElementById('game-board').innerHTML = '';
+  resetButton.textContent = 'Reset board';
+  cards = [];
+  createBoard();
 };
 
 createBoard();

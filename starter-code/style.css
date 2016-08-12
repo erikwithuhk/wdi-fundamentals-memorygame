@@ -45,6 +45,24 @@ main {
   margin: 0 auto;
 }
 
+button {
+  background-color: #fff;
+  color: #e74c3c;
+  border: 2px solid #e74c3c;
+  border-radius: 2px;
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+  margin: 20px auto;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+button:hover {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
 .board {
   height: 80%;
 }
